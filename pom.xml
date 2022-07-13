@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.kdb.inside.brains.credentials</groupId>
+    <artifactId>system-examlpe</artifactId>
+    <version>1.1</version>
+
+    <properties>
+        <!-- Versions are not synchronized. Please update to latest version for compilation -->
+        <plugin.version>1.6.0</plugin.version>
+        <plugin.path>${project.basedir}/../plugin</plugin.path>
+
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.kdb.inside.brains</groupId>
+            <artifactId>KdbInsideBrains</artifactId>
+            <version>${plugin.version}</version>
+            <scope>system</scope>
+            <systemPath>${plugin.path}/build/libs/KdbInsideBrains-${plugin.version}.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <CredentialsProvider>
+                                org.kdb.inside.brains.credentials.SystemVarCredentialsProvider
+                            </CredentialsProvider>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
