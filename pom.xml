@@ -6,15 +6,17 @@
 
     <groupId>org.kdb.inside.brains.credentials</groupId>
     <artifactId>system-examlpe</artifactId>
-    <version>1.1</version>
+    <version>2.0</version>
 
     <properties>
         <!-- Versions are not synchronized. Please update to latest version for compilation -->
-        <plugin.version>1.6.0</plugin.version>
+        <plugin.version>4.6.0</plugin.version>
         <plugin.path>${project.basedir}/../plugin</plugin.path>
 
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -32,7 +34,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifestEntries>

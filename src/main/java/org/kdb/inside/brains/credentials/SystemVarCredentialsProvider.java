@@ -14,7 +14,7 @@ public class SystemVarCredentialsProvider implements CredentialProvider {
 
     @Override
     public String getVersion() {
-        return "1.1";
+        return "2.0";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SystemVarCredentialsProvider implements CredentialProvider {
     }
 
     @Override
-    public String resolveCredentials(String credentials) throws CredentialsResolvingException {
+    public String resolveCredentials(String host, int port, String credentials) throws CredentialsResolvingException {
         final String[] v = split(credentials);
         return v[0] + ":" + System.getenv().get(v[1]);
     }
